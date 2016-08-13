@@ -12,7 +12,10 @@
   "author": "Ramses Lopez",
   "license": "ISC",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-node-inspector": "^0.1.0",
+    "nodemon": "^1.10.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ramses-lopez/angular-translate-tool.git"

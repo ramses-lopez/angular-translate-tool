@@ -3,7 +3,7 @@ var gulp = require('gulp');
 // var livereload = require( 'gulp-livereload' );
 // var jshint = require('gulp-jshint');
 var nodemon = require('nodemon');
-// var nodeInspector = require('gulp-node-inspector');
+var nodeInspector = require('gulp-node-inspector');
 
 gulp.task('debug', () => {
 	gulp.src([])
@@ -35,8 +35,8 @@ gulp.task('nodemon', () => {
 		script: 'app.js',
 		ext: 'js csv'
 	})
-	.on('restart', () => console.info('restarting... ⎈ \n\n\n\n\n'))
-	.on('start', () => console.info('Starting...'))
+	.on('start', () => console.info('starting...'))
+	.on('restart', () => console.info('\n\n\n\n\n---------------------- restarting ----------------------'))
 	.on('quit', () => {})
 })
 
