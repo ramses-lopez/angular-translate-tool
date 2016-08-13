@@ -2,7 +2,7 @@
   "name": "angular-translate-tool",
   "version": "1.0.0",
   "description": "Tool to generate json files from a csv dictionary file",
-  "main": "tool.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
