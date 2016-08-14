@@ -12,8 +12,10 @@
   "author": "Ramses Lopez",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.5.8",
     "angular-translate": "^2.11.1",
     "angular-translate-loader-static-files": "^2.11.1",
+    "express": "^4.14.0",
     "lodash": "^4.15.0"
   },
   "devDependencies": {

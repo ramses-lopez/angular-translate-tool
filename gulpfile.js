@@ -22,4 +22,15 @@ gulp.task('nodemon', () => {
 	.on('quit', () => {})
 })
 
+gulp.task('server', () => {
+	nodemon({
+		exec: 'node --debug',
+		script: 'server.js',
+		ext: 'js html'
+	})
+	.on('start', () => console.info('starting...'))
+	.on('restart', () => console.info('\n\n\n\n\n---------------------- restarting ----------------------'))
+	.on('quit', () => {})
+})
+
 gulp.task( 'default', ['nodemon','debug'], () => {})

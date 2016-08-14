@@ -17,7 +17,6 @@ var dict = [['label','en','es','fr'],
 	['HOMBRE','man','hombre','homme'],
 	['CARRO','car','carro','voiture']]
 
-
 var translations = dict.reduce((langFile, row, idx) => {
 
 	//header processing
@@ -25,7 +24,6 @@ var translations = dict.reduce((langFile, row, idx) => {
 		row.forEach((e, rowIdx) => {
 			if(rowIdx > 0) langFile[e] = {}
 		})
-
 		return langFile
 	}
 	else{
@@ -45,7 +43,9 @@ console.log('writing files')
 
 Object.keys(translations).forEach((lang) => {
 	var data = translations[lang]
-	fs.writeFileSync(`${lang}.json`, JSON.stringify(data))
+	fs.writeFileSync(`lang/${lang}.json`, JSON.stringify(data))
 })
+
+console.log('done!')
 
 process.exit(0)
