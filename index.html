@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app='somosportApp'>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>Angular translate test tool</title>
+
+		<link href="img/favicon.ico" rel="icon" type="image/x-icon" />
+		<!-- HTML5Mode -->
+		<base href="/">
+
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.17/angular2-all-testing.umd.dev.js"></script>
+
+		<script src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
+		<script src="node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+
+		<script type="text/javascript" src="web/app.js"></script>
+		<script type="text/javascript" src="web/controllers/main-controller.js"></script>
+
+	</head>
+	<body ng-controller="mainController">
+		<h1>Translation test</h1>
+		<ol>
+			<li translate>{{"CASA"}}</li>
+			<li translate>{{"CASA.PUERTA"}}</li>
+			<li translate>{{"CASA.PISO"}}</li>
+			<li translate>{{"CASA.MUEBLES.SOFA"}}</li>
+			<li translate>{{"CASA.MUEBLES.CAMA"}}</li>
+			<li translate>{{"CASA.MUEBLES.MESA"}}</li>
+			<li translate>{{"PERRO"}}</li>
+			<li translate>{{"GATO"}}</li>
+			<li translate>{{"MUJER"}}</li>
+			<li translate>{{"HOMBRE"}}</li>
+			<li translate>{{"CARRO"}}</li>
+		</ol>
+
+	</body>
+</html>

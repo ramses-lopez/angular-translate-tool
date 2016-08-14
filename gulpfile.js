@@ -1,7 +1,4 @@
 var gulp = require('gulp');
-// var server = require( 'gulp-develop-server' );
-// var livereload = require( 'gulp-livereload' );
-// var jshint = require('gulp-jshint');
 var nodemon = require('nodemon');
 var nodeInspector = require('gulp-node-inspector');
 
@@ -13,21 +10,6 @@ gulp.task('debug', () => {
 		saveLiveEdit: false
 	}))
 })
-
-// var serverFiles = [
-// 	'./app.js',
-// 	'./gulpfile.js',
-// 	'./route/*.js',
-// 	'./model/*.js',
-// 	'./config/*.js'
-// ];
-
-// gulp.task('jshint', function () {
-// 	gulp.src(serverFiles)
-// 	.pipe(jshint())
-// 	.pipe(jshint.reporter('jshint-stylish'))
-// 	.pipe(jshint.reporter('fail'));
-// });
 
 gulp.task('nodemon', () => {
 	nodemon({

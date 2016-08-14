@@ -11,7 +11,11 @@
   ],
   "author": "Ramses Lopez",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "angular-translate": "^2.11.1",
+    "angular-translate-loader-static-files": "^2.11.1",
+    "lodash": "^4.15.0"
+  },
   "devDependencies": {
     "gulp-node-inspector": "^0.1.0",
     "nodemon": "^1.10.0"

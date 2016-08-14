@@ -1,16 +1,24 @@
+var fs = require('fs')
+var _ = require('lodash')
 var inspect = require('util').inspect
 
-var _log = (t) => console.log(inspect(t, {color: true, depth: Infinity}))
+var _log = (t) => console.log(inspect(t, {colors: true, depth: Infinity}))
 
 var dict = [['label','en','es','fr'],
-	['CASA','home','casa','maison'],
+	['CASA','house','casa','maison'],
+	['CASA.PUERTA','door','puerta','porte'],
+	['CASA.PISO','floor','piso','sol'],
+	['CASA.MUEBLES.SOFA','couch','sofa','canapé'],
+	['CASA.MUEBLES.CAMA','bed','cama','lit'],
+	['CASA.MUEBLES.MESA','table','mesa','maison'],
 	['PERRO','dog','perro','chien'],
 	['GATO','cat','gato','chat'],
 	['MUJER','woman','mujer','femme'],
 	['HOMBRE','man','hombre','homme'],
 	['CARRO','car','carro','voiture']]
 
-var result = dict.reduce((langFile,row,idx) => {
+
+var translations = dict.reduce((langFile, row, idx) => {
 
 	//header processing
 	if(idx == 0){
@@ -22,15 +30,22 @@ var result = dict.reduce((langFile,row,idx) => {
 	}
 	else{
 		Object.keys(langFile).map((lang, i) => {
-			var ii = i+1
-			langFile[lang][row[0]] = row[ii]
+			_.set(langFile[lang], row[0], row[i+1])
 		})
 	}
-
 
 	return langFile
 
 }, {})
 
+console.log('translations done')
+_log(translations)
 console.log('=========================================================')
-_log(result)
+console.log('writing files')
+
+Object.keys(translations).forEach((lang) => {
+	var data = translations[lang]
+	fs.writeFileSync(`${lang}.json`, JSON.stringify(data))
+})
+
+process.exit(0)
