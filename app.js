@@ -4,12 +4,15 @@ var inspect = require('util').inspect
 
 var _log = (t) => console.log(inspect(t, {colors: true, depth: Infinity}))
 
+var fileName = '/Users/ramses/projects/somosports/ss-competition/lang/dictionary.csv'
+var destinationFolder = '/Users/ramses/projects/somosports/ss-competition/lang'
+
 var dict =
-	fs.readFileSync('data/dictionary.csv', 'utf8')
+	fs.readFileSync(fileName, 'utf8')
 	.split('\n')
 	.map((row) => row.split(','))
 
-console.log('file read')
+console.log(fileName,'read')
 
 var translations = dict.reduce((langFile, row, idx) => {
 	//header processing
@@ -36,7 +39,7 @@ console.log('writing files')
 
 Object.keys(translations).forEach((lang) => {
 	var data = translations[lang]
-	fs.writeFileSync(`lang/${lang}.json`, JSON.stringify(data))
+	fs.writeFileSync(`${destinationFolder}/${lang}.json`, JSON.stringify(data))
 	console.log(`  written lang/${lang}.json`)
 })
 
