@@ -4,8 +4,8 @@ var inspect = require('util').inspect
 
 var _log = (t) => console.log(inspect(t, {colors: true, depth: Infinity}))
 
-var fileName = '/Users/ramses/projects/somosports/ss-competition/lang/dictionary.csv'
-var destinationFolder = '/Users/ramses/projects/somosports/ss-competition/lang'
+var fileName = 'lang/dictionary.csv'
+var destinationFolder = 'lang'
 
 var dict =
 	fs.readFileSync(fileName, 'utf8')
