@@ -1,6 +1,6 @@
 {
   "name": "angular-translate-tool",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Tool to generate json files from a csv dictionary file",
   "main": "app.js",
   "scripts": {
